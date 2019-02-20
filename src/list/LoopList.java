@@ -1,6 +1,6 @@
 package list;
 
-
+// 判断链表是否有环
 public class LoopList {
 	public static boolean isLoop(Node<Integer> head) {
 		if(head == null || head.next == null) return false;
@@ -15,7 +15,4 @@ public class LoopList {
 		return false;
 	}
 	
-	public static void main(String[] args) {
-		
-	}
 }

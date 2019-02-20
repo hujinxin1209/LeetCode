@@ -5,7 +5,7 @@ package list;
 //（3）让cur的下一个节点变成指向pre，而后pre移动cur，cur移动到next
 //（4）重复（1）（2）（3）
 
-public class ReverseList {
+public class ReverseList_77 {
 	private static Node<Integer> initNode;
 	
 	public static Node<Integer> reverse(Node<Integer> head){
@@ -23,25 +23,35 @@ public class ReverseList {
 		return pre;
 	}
 	
-	public static void initNode() {
-		Node<Integer> n1 = new Node<Integer>(4, null);
+	public static Node<Integer> initNode() {
+		Node<Integer> n1 = new Node<Integer>(9, null);
 		Node<Integer> n2 = new Node<Integer>(7, n1);
-		Node<Integer> n3 = new Node<Integer>(3, n2);
-		Node<Integer> n4 = new Node<Integer>(8, n3);
-		initNode = new Node<Integer>(2, n4);
+		Node<Integer> n3 = new Node<Integer>(6, n2);
+		Node<Integer> n4 = new Node<Integer>(3, n3);
+		return new Node<Integer>(2, n4);
+	}
+	
+	public static Node<Integer> initNode1() {
+		Node<Integer> n1 = new Node<Integer>(13, null);
+		Node<Integer> n2 = new Node<Integer>(12, n1);
+		Node<Integer> n3 = new Node<Integer>(8, n2);
+		Node<Integer> n4 = new Node<Integer>(5, n3);
+		Node<Integer> n5 = new Node<Integer>(4, n4);
+		return new Node<Integer>(2, n5);
 	}
 	
 	public static void print(Node<Integer> head) {
 		System.out.println("");
 		Node<Integer> node = head;
 		while(node != null) {
-			System.out.print(node.value);
+			System.out.print("--" + node.value);
 			node = node.next;
 		}
+		System.out.println("");
 	}
 	
 	public static void main(String[] args) {
-		initNode();
+		initNode = initNode();
 		print(initNode);
 		Node<Integer> newNode = reverse(initNode);
 		print(newNode);
